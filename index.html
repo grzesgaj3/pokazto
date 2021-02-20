@@ -19,10 +19,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Adaptive Images-->
-  <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
-
-
   <title>Pokaż To!</title>
 
   <!-- bootstrap core css -->
@@ -49,12 +45,12 @@
     <header class="header_section ">
       <div class="container-fluid">
         <nav class="fixed-top navbar navbar-expand-lg custom_nav-container" style="background-color: #ffffff;" id="mainNav">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="#main">
             <span>
               Pokaż To !
             </span>
           </a>
-          <img height="57px" width="50px" src="images/logo.png" href="#" alt="">
+          <img height="57px" width="50px" src="images/logo.png" href="#main" alt="">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
           </button>
@@ -63,7 +59,7 @@
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link js-scroll-trigger" href= onclick="topFunction()">Strona Główna <span class="sr-only">(current)</span></a>
+                  <a class="nav-link js-scroll-trigger" href="#main">Strona Główna <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#onas">O nas</a>
@@ -85,7 +81,7 @@
     </header>
     <!-- end header section -->
     <!-- slider section -->
-    <section class="slider_section ">
+    <section id="main" class="slider_section ">
       <div class="slider_bg_box">
         <div class="bg_img_box">
           <img src="images/slider-bg.jpg" alt="">
@@ -411,38 +407,33 @@ Pokaż to! Projekt realizowany w ramach olimpiady „Zwolnieni z Teorii”. Jego
     <div id="contact" class="container">
       <div class="heading_container">
         <h2>
-          Contact Us
+          Zkontaktuj się z nami!
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="btn_box">
-                <button>
-                  SEND
-                </button>
-              </div>
+            <form id="submit-form" method="POST"  action="https://formspree.io/f/mzbkqyep">
+              <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                <div>
+                  <input name="name" type="text" placeholder="Twoje Imię" />
+                </div>
+                <div>
+                  <input name="telephone" type="text" placeholder="Numer telefonu" />
+                </div>
+                <div>
+                  <input name="email" type="email" placeholder="E-mail" />
+                </div>
+                <div>
+                  <input type="text" name="name" class="message-box" placeholder="Wiadomość" />
+                </div>
+                <div class="btn_box">
+                  <button type="submit">
+                    Wyślij!
+                  </button>
+                </div>
+              </form>
             </form>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap"></div>
-            </div>
           </div>
         </div>
       </div>
@@ -541,7 +532,6 @@ Pokaż to! Projekt realizowany w ramach olimpiady „Zwolnieni z Teorii”. Jego
   </footer>
   <!-- footer section -->
 
-
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
@@ -550,9 +540,7 @@ Pokaż to! Projekt realizowany w ramach olimpiady „Zwolnieni z Teorii”. Jego
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+
 
 </body>
 
